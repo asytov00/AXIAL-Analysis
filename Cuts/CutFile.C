@@ -21,7 +21,7 @@ if( (runnumb >= 112000 ))//&& runnumb <= 113103 ))
     X_CUT_left = -14980;//14000.;   //15400;// 
     X_CUT_right =-14000.;//14980.;// 16100;//
     Y_CUT_left = 10000.;    
-    Y_CUT_right = 13800.;
+    Y_CUT_right = 14000.;
     //Y_CUT_left = 10500;    Y_CUT_right = 11500;
     
     DEVA_CUT = 600.;

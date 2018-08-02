@@ -24,7 +24,7 @@ hy3naP->Fill(y3);
 
 hx12->Fill(x1-x2);
 hx13->Fill(x1-x3);
-hx23->Fill(x2+x3);
+hx23->Fill(x2-x3);
 
 hy12->Fill(y1-y2);
 hy13->Fill(y1-y3);

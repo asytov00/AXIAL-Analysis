@@ -347,6 +347,11 @@ int main(){
         detectY1 = Y_CUT_left- 5000.;
         detectY2 = Y_CUT_right+ 5000.;
     }
+    
+    detectX1=-20000;
+    detectX2=20000;
+
+    
     int detectXBin = int((detectX2-detectX1)/32)*4;// pixel per 16 microns
     int detectYBin = int((detectY2-detectY1)/32);// pixel per 32 microns
     int thXinBin = int(thXin*2.);// pixel per 2 murad
