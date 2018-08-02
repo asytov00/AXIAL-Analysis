@@ -6,7 +6,7 @@
 
 
 // ST1004 Si axes [110] plane (111) 
-if( (runnumb >= 112000 && runnumb <= 113103 ))
+if( (runnumb >= 112000 ))//&& runnumb <= 113103 ))
 {
     deflXmar1=-512.;    deflXmar2=512.;
     deflYmar1=-512.;    deflYmar2=512.;

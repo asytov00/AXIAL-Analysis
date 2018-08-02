@@ -335,6 +335,16 @@ sprintf(filesdir,"/home/alexei/Alexei/Channeling/Experiment/CERN2017/DATA-H4-201
 
 }
 
+if(YEAR==2018 && MONTH==8){
+    Z1 = Z117_1;
+    Z2 = Z217_1;
+    Zg = Zg17_1;
+    Z3 = Z317_1;
+
+sprintf(filesdir,"/home/alexei/data2018/"); ///data/Alexei/Channeling/Experiment/CERN2016/DATA_H4_2016/data_fe2/");
+
+}
+
 sprintf(tempdir,"tempfile.txt");
 
 
