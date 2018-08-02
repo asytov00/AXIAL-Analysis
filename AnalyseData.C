@@ -217,7 +217,7 @@ int main(){
         cradST = (int)dummy_step + 1;
     }
     
-    dummy_step = (fabs(up_lin_first-up_lin_last)/(Nsteps_lin-1)); //WHY (Nsteps_lin-1)?
+    dummy_step = (fabs(up_lin_first-up_lin_last)/(Nsteps_lin)); 
     if(fmod(dummy_step,1) < 0.5) {
         linST = (int)dummy_step;
     } if(fmod(dummy_step,1) >= 0.5) {
