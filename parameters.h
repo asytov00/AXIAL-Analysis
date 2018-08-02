@@ -27,7 +27,7 @@
 #define RUN_NUMB16 97736
 #define RUN_NUMB17 97736
 
-#define N_FILES 0 //# files for single run to be analyzed; -1 == all files
+#define N_FILES 0 // number of files for a single run to be analyzed; 0 == all files
 #define N_FILES_IN 1 //starting number of files to be analyzed
 
 //// OPTIONS
@@ -77,9 +77,9 @@
 #define Zg17_1   5.821     // Goniometer-Crystal position
 #define Z317_1   11.521      // SD3
 
-#define Z118_1   0.000      // SD1
-#define Z218_1   5.6      // SD2
-#define Zg18_1   6.09      // Goniometer-Crystal position
-#define Z318_1   11.4      // SD3
+#define Z118_1   0.000      // SD1?
+#define Z218_1   5.6      // SD2?
+#define Zg18_1   6.09      // Goniometer-Crystal position?
+#define Z318_1   11.4      // SD3?
 
 #endif

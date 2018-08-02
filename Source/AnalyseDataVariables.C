@@ -46,8 +46,8 @@ for(ijkl=0;ijkl<16;ijkl++) posMax[ijkl]=-999999999.;
 int nstrip[12]; //# -> strip hitted in ascii file
 float xsum_deva;
 float xsum_rino;
-int deva[16]; //# -> scintillator counts for nuclear interaction in ascii file
-int devabase[16]; //# -> scintillator counts for nuclear interaction in ascii file
+int deva[16]; //# -> scintillator counts for nuclear interaction in ascii file?
+int devabase[16]; //# -> scintillator counts for nuclear interaction in ascii file?
 float devatot;
 float deva_temp;
 float rinotot;
@@ -65,7 +65,9 @@ float calo_crys_tot_energy;
 
 float gonio_rot=0.; //murad -> gonio angle in ascii file
 float gonio_crad=0.; //murad -> gonio cradle in ascii file
-float up_lin=0.; //mm -> linear motion in ascii file
+float up_lin=0.; //mm -> lateral linear motion in ascii file
+float up_lin_2=0.; //mm -> latera_2 motion in ascii file / added in 2018
+float up_ver=0.; //mm -> vertical motion in ascii file / added in 2018
 int spillnumb; //# -> spill number in ascii file
 int goniostep; //# -> scan step number in ascii file
 int eventnumb;//# -> events number in ascii file
@@ -80,16 +82,24 @@ float cradR; // cradle scan right margin
 int cradST; // cradle step size
 float linL; // lin scan  left margin
 float linR; // lin scan right margin
-int linST; // cradle step size
+int linST; // lin step size
+float lin_2L; // lin 2 scan left margin
+float lin_2R; // lin 2 scan right margin
+int lin_2ST; //lin 2 step size
+float verL; //vertical scan left margin (added in 2018)
+float verR; //vertical scan right margin (added in 2018)
+int verST; //vertical step size (added in 2018)
 int nbin=1;
 int Nsteps_rot = 0; // number of steps in rotational scan
 int Nsteps_rot_old = 0; // number of steps in rotational scan
 int Nsteps_lin = 0; // number of steps in linear scan
+int Nsteps_lin_2 = 0; // number of steps in linear(2) scan (added in 2018)
 int Nsteps_crad = 0; // number of steps in cradle scan
+int Nsteps_ver = 0; // number of steps in vertical scan  (added in 2018)
 int AUX=0;
 int counter=0;
 int counterTotal=0;
-int scanflag = -1; // flag for the type of scan: (1) angular scan, (2) lateral scan, (3) single DAQ, (4) crad scan
+int scanflag = -1; // flag for the type of scan: (0) lateral scan, (1) angular scan, (2) crad scan, (3) single DAQ, (4) (0) lateral scan 2, (5) vertical scan.
 float h2st = 0.;
 float cost1 = 0.3*3.59; // 10/3*B*L [Tm]  H4 2010  Bending Magnet @ 3.59 Tm
 float cost2 = 0.3*3.59/120.; // 10/3*B*L/120 [Tm/(GeV/c)]   H4 2010  Positron/Electron Beam @ 120 GeV/c
@@ -98,9 +108,15 @@ float old_gonio_rot;
 float gonio_rot_first;
 float gonio_rot_last;
 float old_up_lin;
+float old_up_lin_2; // added in 2018
 float up_lin_first;
 float up_lin_last;
+float up_lin_2first; // added in 2018
+float up_lin_2last; // added in 2018
+float up_ver_first; // added in 2018
+float up_ver_last; // added in 2018
 float old_gonio_crad;
+float old_up_ver; // added in 2018
 float gonio_crad_first;
 float gonio_crad_last;
 

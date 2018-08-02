@@ -108,6 +108,10 @@ int main(){
                     gonio_rot_last = gonio_rot;
                     up_lin_first = up_lin;
                     up_lin_last = up_lin;
+		    up_lin_2first = up_lin_2; //added in 2018
+		    up_lin_2last = up_lin_2; //added in 2018
+		    up_ver_first = up_ver; //added in 2018
+		    up_ver_last = up_ver;  //added in 2018 
                     gonio_crad_first = gonio_crad;
                     gonio_crad_last = gonio_crad;
                     FIRSTFILE=0;
@@ -127,6 +131,10 @@ int main(){
                 if(gonio_rot > gonio_rot_last) gonio_rot_last = gonio_rot;
                 if(up_lin < up_lin_first) up_lin_first = up_lin;
                 if(up_lin > up_lin_last) up_lin_last = up_lin;
+		if(up_lin_2 < up_lin_2first) up_lin_2first = up_lin_2; //added in 2018
+                if(up_lin_2 > up_lin_2last) up_lin_2last = up_lin_2;  //added in 2018
+		if(up_ver < up_ver_first) up_ver_first = up_ver; //added in 2018
+		if(up_ver > up_ver_last)  up_ver_last = up_ver;  //added in 2018
                 if(gonio_crad < gonio_crad_first) gonio_crad_first = gonio_crad;
                 if(gonio_crad > gonio_crad_last) gonio_crad_last = gonio_crad;
                 
@@ -153,11 +161,20 @@ int main(){
                     if(old_up_lin != up_lin){
                         Nsteps_lin++;
                     }
+		    
+                    if(old_up_lin_2 != up_lin_2){ //added in 2018
+                        Nsteps_lin_2++;
+                    }
+		    
+		    if(old_up_ver != up_ver){ //added in 2018
+		        Nsteps_ver++;
+		    } 
                 }
                 
                 old_gonio_rot = gonio_rot;
                 old_up_lin = up_lin;
                 old_gonio_crad = gonio_crad;
+		old_up_ver = up_ver;  //added in 2018
 
 		AUX=1;
 		
@@ -200,32 +217,50 @@ int main(){
         cradST = (int)dummy_step + 1;
     }
     
-    dummy_step = (fabs(up_lin_first-up_lin_last)/(Nsteps_lin-1));
+    dummy_step = (fabs(up_lin_first-up_lin_last)/(Nsteps_lin-1)); //WHY (Nsteps_lin-1)?
     if(fmod(dummy_step,1) < 0.5) {
         linST = (int)dummy_step;
     } if(fmod(dummy_step,1) >= 0.5) {
         linST = (int)dummy_step + 1;
     }
+
+    dummy_step = (fabs(up_lin_2first-up_lin_2last)/(Nsteps_lin_2)); //added in 2018
+    if(fmod(dummy_step,1) < 0.5) {
+        lin_2ST = (int)dummy_step;
+    } if(fmod(dummy_step,1) >= 0.5) {
+        lin_2ST = (int)dummy_step + 1;
+    }
+    
+    dummy_step = (fabs(up_ver_first-up_ver_last)/(Nsteps_ver));
+    if(fmod(dummy_step,1) < 0.5) {
+        verST = (int)dummy_step;
+    } if(fmod(dummy_step,1) >= 0.5) {
+        verST = (int)dummy_step + 1;
+    }
+    
+
+    
     
     rotL = gonio_rot_first;
     rotR = gonio_rot_last;
     cradL = gonio_crad_first;
     cradR = gonio_crad_last;
     linL=up_lin_first;
-    linR=up_lin_last;    
+    linR=up_lin_last;
+    lin_2L = up_lin_2first; //added in 2018
+    lin_2R = up_lin_2last; //added in 2018  
+    verL= up_ver_first; //added in 2018
+    verR= up_ver_last; //added in 2018
     
-    
-    //int nbin = 1;
-    //float rotSX = -1;
-    //float rotDX = 1;
     
     
     printf("\n--------------------------------\n\n");
     printf("Rot steps #:   %d (means %3d total positions) \n",Nsteps_rot,Nsteps_rot+1);
     printf("Lin steps #:   %d (means %3d total positions) \n",Nsteps_lin,Nsteps_lin+1);
     printf("Crd steps #:   %d (means %3d total positions) \n",Nsteps_crad,Nsteps_crad+1);
+    printf("Ver steps #:   %d (means %3d total positions) \n",Nsteps_ver,Nsteps_ver+1);
     
-    if((Nsteps_lin==0)&&(Nsteps_rot==0)&&(Nsteps_crad==0))
+    if((Nsteps_lin==0)&&(Nsteps_rot==0)&&(Nsteps_crad==0)&&(Nsteps_ver==0)) // &&(Nsteps_ver==0) added in 2018
     {
         printf("\n                    ======>    SINGLE DAQ (fixed position)    <======\n");
         scanflag = 3 ;
@@ -266,6 +301,29 @@ int main(){
         printf("cradle@ %.1f murad rotational@ %.1f murad\n",gonio_crad,gonio_rot);
         scanflag = 0 ;
     }
+        else if(Nsteps_lin_2!=0){ //added in 2018
+        nbin = (int)((lin_2R - lin_2L) / lin_2ST);
+        rotSX = (lin_2L-lin_2ST);
+        rotDX = lin_2L+(nbin*lin_2ST)+lin_2ST;
+
+        printf("\n                    ======>    LATERAL LINEAR (2) SCAN    <======\n\n");
+        printf("Total Position: %d   from   %.1f microns to   %.1f microns  @ %d microns\n"
+               ,Nsteps_lin_2+1,up_lin_2first,up_lin_2last,lin_2ST);
+        printf("cradle@ %.1f murad rotational@ %.1f murad\n",gonio_crad,gonio_rot);
+        scanflag = 4 ;
+    }
+
+    else if(Nsteps_ver!=0){ //added in 2018
+        nbin = (int)((verR - verL) / verST);
+        rotSX = (verL-verST);
+        rotDX = verL+(nbin*verST)+verST;
+
+        printf("\n                    ======>    VERTICAL SCAN    <======\n\n");
+        printf("Total Position: %d   from   %.1f microns to   %.1f microns  @ %d microns\n"
+               ,Nsteps_ver+1,up_ver_first,up_ver_last,verST);
+        printf("cradle@ %.1f murad rotational@ %.1f murad\n",gonio_crad,gonio_rot);
+        scanflag = 5 ;
+    }
     
     printf("\nnbin = %d\n", nbin);
 
@@ -273,7 +331,7 @@ int main(){
     ////////////////// Histogram Variable Definitions /////////////////////
     ///////////////////////////////////////////////////////////////////////
     
-    thXin=128.;    thXout=128.;
+    thXin=128.;    thXout=128.; //?
     
 #include "Cuts/CutFile.C"
     
@@ -409,7 +467,7 @@ int main(){
     part_save part;
     T->Branch("part",&part,"x_in/D:y_in/D:thx_in/D:thy_in/D:x_out/D:y_out/D:thx_out/D:thy_out/D");
     
-    if(SAVE) fprintf(fileout,"runnumb %d \n detectX1 %f \n detectX2 %f \n detectY1 %f \n detectY2 %f \n thXin %f \n thXout %f \n deflXmar1 %f \n deflXmar2 %f \n deflYmar1 %f \n deflYmar2 %f \n torsion_posYthX %f \n X_CUT_left %f \n X_CUT_right %f \n Y_CUT_left %f \n Y_CUT_right %f \n divAcutX %f \n divAcutY %f \n divBcutX %f \n divBcutY %f \n divCcutX %f \n divCcutY %f \n divRcut %f \n thXinCorr %f \n thYinCorr %f",runnumb, detectX1, detectX2, detectY1, detectY2,thXin,thXout,deflXmar1,deflXmar2, deflYmar1, deflYmar2, torsion_posYthX,  X_CUT_left,X_CUT_right,Y_CUT_left,Y_CUT_right,divAcutX,divAcutY,divBcutX,divBcutY,divCcutX,divCcutY,divRcut,thXinCorr,thYinCorr);
+    if(SAVE) fprintf(fileout,"runnumb %d \n detectX1 %f \n detectX2 %f \n detectY1 %f \n detectY2 %f \n thXin %f \n thXout %f \n deflXmar1 %f \n deflXmar2 %f \n deflYmar1 %f \n deflYmar2 %f \n torsion_posYthX %f \n X_CUT_left %f \n X_CUT_right %f \n Y_CUT_left %f \n Y_CUT_right %f \n divAcutX %f \n divAcutY %f \n divBcutX %f \n divBcutY %f \n divCcutX %f \n divCcutY %f \n divRcut %f \n thXinCorr %f \n thYinCorr %f",runnumb, detectX1, detectX2, detectY1, detectY2, thXin, thXout, deflXmar1, deflXmar2, deflYmar1, deflYmar2, torsion_posYthX, X_CUT_left,X_CUT_right, Y_CUT_left,Y_CUT_right, divAcutX, divAcutY, divBcutX, divBcutY, divCcutX, divCcutY, divRcut, thXinCorr, thYinCorr);
     
     fclose(fileout);
     
@@ -434,7 +492,7 @@ int main(){
     }
     
 #include "Cuts/GonioFile.C"
-    
+    /*    
     if(scanflag==0)    // lin scan
     {
         nbin = (int)((linR - linL) / linST);
@@ -453,6 +511,7 @@ int main(){
         rotSX = (cradL-cradST*1.8);
         rotDX = cradL+(nbin*cradST)+cradST*2.2;
     }
+    */
     
     std::cout << rotSX << " " << rotDX << std::endl;
     float rotCENTER_shift = 0.;
@@ -508,6 +567,7 @@ int main(){
     Nsteps_rot = 0;
     Nsteps_lin = 0;
     Nsteps_crad = 0;
+    Nsteps_lin_2 = 0;
     
     
     
@@ -618,7 +678,7 @@ int main(){
                         ///////////////////////////////////////////////////////////////////////
                         //////////////// Calculation of the step dinamically //////////////////
                         ///////////////////////////////////////////////////////////////////////
-                        
+		      
                         if (scanflag==0)
                         {
                             dummy_step = fabs((up_lin_first - up_lin) / linST );
@@ -628,7 +688,16 @@ int main(){
                                 Nsteps_lin = (int)dummy_step + 1;
                             }
                         }
-                        
+
+			if (scanflag==4) //added in 2018
+                        {
+                            dummy_step = fabs((up_lin_2first - up_lin_2) / lin_2ST );
+                            if(fmod(dummy_step,1) < 0.5) {
+                                Nsteps_lin_2 = (int)dummy_step;
+                            } if(fmod(dummy_step,1) >= 0.5) {
+                                Nsteps_lin_2 = (int)dummy_step + 1;
+                            }
+                        }
                         
                         if (scanflag==1)
                         {
@@ -650,14 +719,25 @@ int main(){
                                 Nsteps_crad = (int)dummy_step + 1;
                             }
                         }
-                        
+			
+                        if (scanflag==5)  //added in 2018
+                        {
+                            dummy_step = fabs((up_ver_first - up_ver) / verST) ;
+                            if(fmod(dummy_step,1) < 0.5) {
+                                Nsteps_ver = (int)dummy_step;
+                            } if(fmod(dummy_step,1) >= 0.5) {
+                                Nsteps_ver = (int)dummy_step + 1;
+                            }
+                        }			
+		   
+  
                         /////////////////////////////////
                         /////////////////////////////////
                         
                         
-                        x1 = -pos[0] / 0.0001 ;//cm -> microns // to analyse 2017 data: change x1 = -pos[0]
+                        x1 = pos[0] / 0.0001 ;//cm -> microns // to analyse 2017 data change it to -->  x1 = -pos[0]
                         y1 = pos[1] / 0.0001 ;//cm -> microns
-                        x2 = -pos[2] / 0.0001 ;//cm -> microns // to analyse 2017 data: change x= -pos[2]
+                        x2 = pos[2] / 0.0001 ;//cm -> microns // to analyse 2017 data change it to -->  x  = -pos[2]
                         y2 = pos[3] / 0.0001 ;//cm -> microns
                         x3 = pos[4] / 0.0001 ;//cm -> microns
                         y3 = pos[5] / 0.0001 ;//cm -> microns
@@ -804,11 +884,17 @@ int main(){
                                 }
                                 if(YEAR==2017){
                                     divcorr = +thXin; //NOT CHECKED
-                                }                                
+                                }
+			 	//if(YEAR==201){ //inserted in 2018
+                                //    divcorr = +/-thXin; 
+                                //}
+				
                             }
                             else if(scanflag==2) divcorr = thYin;
                             
                             if(scanflag==0) h2st = up_lin;
+			    if(scanflag==4) h2st = up_lin_2; //added in 2018
+			    if(scanflag==5) h2st = up_ver;   //added in 2018
                             else if(scanflag==1) h2st = gonio_rot;
                             else if(scanflag==2) h2st = gonio_crad;
                             
@@ -827,6 +913,8 @@ int main(){
                             if(scanflag==0) nstep=Nsteps_lin;
                             if(scanflag==1) nstep=Nsteps_rot;
                             if(scanflag==2) nstep=Nsteps_crad;
+			    if(scanflag==4) nstep=Nsteps_lin_2; //added in 2018
+			    if(scanflag==5) nstep=Nsteps_ver;   //added in 2018
                             
                             //thXin *= -1.;
                             //thXout *= -1;
