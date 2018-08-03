@@ -469,7 +469,7 @@ for (torY = 0 ; torY <50 ; torY++)
 
 
 
-for (int ii111 = 0 ; ii111 <9 ; ii111++){
+for (int ii111 = 0 ; ii111 <8 ; ii111++){
     hCalo2018ADC[ii111]->Fill(deva[ii111]);
 }
 if(flagpos) h2dX1in2018Ph->Fill((float)h2st+divcorr,deva[3]);

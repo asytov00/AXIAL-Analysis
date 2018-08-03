@@ -502,7 +502,7 @@ TH3F *hdeflXYthYinA = new TH3F("hdeflXYthYinA","Y beam deflection (#Delta#theta_
 
 /// 2018 ////
 TH1F *hCalo2018ADC[8];
-for (int ii111 = 0 ; ii111 <9 ; ii111++){
+for (int ii111 = 0 ; ii111 <8 ; ii111++){
     sprintf(histoname2,"ADC ( %d ) [#murad]; ADC [channel]; Counts [a.u.]",ii111);
     sprintf(histoname1,"hCalo2018ADC%1d",ii111);
     hCalo2018ADC[ii111] = new TH1F(histoname1,histoname2,16000,-0.5,16000-0.5);
@@ -515,7 +515,7 @@ TH1F *hCalo2018ADC4 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);
 
 
 TH2F *h2dX1in2018Ph = new TH2F("h2dX1in2018Ph","Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; ADC [channel]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,1600,0,16000);
-TH2F *h2dX1in2018PhInv = new TH2F("h2dX1in2018Ph","Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; ADC [channel]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,1600,0,16000);
+TH2F *h2dX1in2018PhInv = new TH2F("h2dX1in2018PhInv","Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; ADC [channel]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,1600,0,16000);
 
 TH2F *h2018PhthXinP = new TH2F("h2018PhthXinP","Calorimeter 4 VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; ADC [channel]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,1600,0,16000);
 TH2F *h2018PhthYinP = new TH2F("h2018PhthYinP","Calorimeter 4 VS Y in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; ADC [channel]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,1600,0,16000);
