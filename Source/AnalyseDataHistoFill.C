@@ -324,6 +324,7 @@ if(flagpos) {h2dX1inRad->Fill((float)h2st+divcorr,calo_crys_tot_energy);}//scan 
 if(flagpos) {h2dX1Rad->Fill((float)h2st,calo_crys_tot_energy);}//scan radiazione
 if(flagpos) {h2dX1inRadInv->Fill((float)h2st-divcorr,calo_crys_tot_energy);}//scan radiazione invertito
 
+    
 /*
 if(flagpos)
 for(ii=1;ii<=h2dX1inTors->GetXaxis()->GetNbins();ii++)
@@ -465,3 +466,14 @@ for (torY = 0 ; torY <50 ; torY++)
 }
 
 }
+
+
+
+for (int ii111 = 0 ; ii111 <9 ; ii111++){
+    hCalo2018ADC[ii111]->Fill(deva[ii111]);
+}
+if(flagpos) h2dX1in2018Ph->Fill((float)h2st+divcorr,deva[3]);
+if(flagpos) h2dX1in2018PhInv->Fill((float)h2st-divcorr,deva[3]);
+if(flagpos) h2018PhthXinP->Fill(thXin,deva[3]);
+if(flagpos) h2018PhthYinP->Fill(thYin,deva[3]);
+

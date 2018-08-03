@@ -1,3 +1,3 @@
 make clean
 make
-./AnalyseData
+./AnalyseData $1
