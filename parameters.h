@@ -7,10 +7,10 @@
 
 #define MAX_ENTRIES 100000000000
 
-#define N_RUNS 1
+#define N_RUNS 2
 
-#define RUN_NUMB  300102
-#define RUN_NUMB2 112287
+#define RUN_NUMB  300131
+#define RUN_NUMB2 300129
 #define RUN_NUMB3 112288
 #define RUN_NUMB4 112965
 #define RUN_NUMB5 112966
@@ -38,7 +38,7 @@
 #define ONLYTREE 0//
 
 #define CORRECT_TORSION 0 //move the xpos and xpos zeros at the center of the crystal
-#define CENTER 0 //move the xpos and xpos zeros at the center of the crystal
+#define CENTER 1 //move the xpos and xpos zeros at the center of the crystal
 #define GONIO_ZERO 0//set the zero of the gonio plot in the first step
 #define OFFSET_GONIO 0//
 #define PLANE_ROTANG 0

@@ -371,10 +371,11 @@ hdeflXposXposY->Fill(xCRY,yCRY,deflX);
  if(flagposx) hdeflXposYthXin->Fill(thXin,yCRY,deflX);*/
 
 /*
- 
+ */
  if(flagpos) hdeflXYscan->Fill((float)h2st+divcorr,deflX,deflY);
+/*
  if(flagpos && flagdivA) hdeflXYscanA->Fill((float)h2st+divcorr,deflX,deflY);
- 
+
  
  if(flagposy && flagdivAy) hdeflXposXthXin->Fill(thXin,xCRY,deflX);
  if(flagposy && flagdivAx) hdeflXposXthYin->Fill(thYin,xCRY,deflX);

@@ -184,8 +184,8 @@ TH2F *hdeflXthXinP_0 = new TH2F("hdeflXthXinP_0","X beam deflection (#Delta#thet
 ///////////////////////////////////////////////////////////////////////
 ///////////// Beam Deflection VS Position Histograms //////////////////
 ///////////////////////////////////////////////////////////////////////
-TH2F *hdeflXposX = new TH2F("hdeflXposX","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,-10000,10000);//,deflXmar1,deflXmar2);
-TH2F *hdeflXposXP = new TH2F("hdeflXposXP","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,-10000,10000);//,deflXmar1,deflXmar2);
+TH2F *hdeflXposX = new TH2F("hdeflXposX","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,deflXmar1,deflXmar2);
+TH2F *hdeflXposXP = new TH2F("hdeflXposXP","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,deflXmar1,deflXmar2);
 TH2F *hdeflXposY = new TH2F("hdeflXposY","X beam deflection  (#Delta#theta_{x}) Vs Y position at the crystal (y_{in}); Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",detectYBin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);
 TH2F *hdeflXposYP = new TH2F("hdeflXposYP","X beam deflection  (#Delta#theta_{x}) Vs Y position at the crystal (y_{in}); Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",detectYBin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);
 TH2F *hdeflYposX = new TH2F("hdeflYposX","Y beam deflection  (#Delta#theta_{y}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Vertical Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflYBin,deflYmar1,deflYmar2);
@@ -311,7 +311,7 @@ TH2F *h2dX2R = new TH2F("h2dX2R","X beam deflection (#Delta#theta_{x}) Vs Goniom
 
 
 
-TH2F *h2dX0in   = new TH2F("h2dX0in","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2);
+TH2F *h2dX0in   = new TH2F("h2dX0in","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*20,rotSX*2.,rotDX*2.,deflXBin,deflXmar1,deflXmar2);
 TH2F *h2dX1in = new TH2F("h2dX1in","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2*10,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2);
 TH2F *h2dX1inGO = new TH2F("h2dX1inGO","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2*10,-1778676,-1776716,deflXBin,deflXmar1,deflXmar2);
 TH2F *h2dX1inT = new TH2F("h2dX1inT","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2*10,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2);
@@ -446,9 +446,9 @@ TH3F *hdeflXposXposY = new TH3F("hdeflXposXposY","X beam deflection (#Delta#thet
 TH3F *hdeflXposXposYC = new TH3F("hdeflXposXposYC","X beam deflection (#Delta#theta_{x}) VS Y position at the crystal (y_{in}) VS X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",TH3Pxbin,detectX1,detectX2,TH3Pybin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);
 
 TH3F *hdeflXposYthXin = new TH3F("hdeflXposYthXin","X beam deflection (#Delta#theta_{x}) VS  Y position at the crystal (y_{in}) VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",TH3Dxbin,-thXin+0.5,thXin+0.5,TH3Pybin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);
-
+*/
 TH3F *hdeflXYscan = new TH3F("hdeflXYscan","X beam deflection (#Delta#theta_{x}) VS Y beam deflection (#Delta#theta_{y}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad];  Vertical Deflection Angle [#murad]",(nbin+4)*2,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2,deflYBin,deflYmar1,deflYmar2);
-
+/*
 TH3F *hdeflXYscanA = new TH3F("hdeflXYscanA","X beam deflection (#Delta#theta_{x}) VS Y beam deflection (#Delta#theta_{y}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad];  Vertical Deflection Angle [#murad]",(nbin+4)*2,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2,deflYBin,deflYmar1,deflYmar2);
 
 TH3F *hdeflXposXscan = new TH3F("hdeflXposXscan","X beam deflection (#Delta#theta_{x}) VS X position at the crystal (x_{in}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad];  x_{in} [#mum]",(nbin+4)*2,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2,TH3Pxbin,detectX1,detectX2);

@@ -274,6 +274,17 @@ sprintf(filesdir,"%s",argv[1]);
         scanflag = 3 ;
         printf("rotational@ %.1f murad cradle@ %.1f murad lin@ %.1f microns\n",gonio_rot,gonio_crad,up_lin);
     }
+    else if(Nsteps_ver!=0){ //added in 2018
+        nbin = (int)((verR - verL) / verST);
+        rotSX = (verL-verST);
+        rotDX = verL+(nbin*verST)+verST;
+
+        printf("\n                    ======>    VERTICAL SCAN    <======\n\n");
+        printf("Total Position: %d   from   %.1f microns to   %.1f microns  @ %d microns\n"
+               ,Nsteps_ver+1,up_ver_first,up_ver_last,verST);
+        printf("cradle@ %.1f murad rotational@ %.1f murad\n",gonio_crad,gonio_rot);
+        scanflag = 5 ;
+    }
     else if((Nsteps_crad>Nsteps_lin)&&(Nsteps_crad>Nsteps_rot)){
         nbin = (int)((cradR - cradL) / cradST);
         rotSX = (cradL-cradST*1.8);
@@ -321,18 +332,6 @@ sprintf(filesdir,"%s",argv[1]);
         scanflag = 4 ;
     }
 
-    else if(Nsteps_ver!=0){ //added in 2018
-        nbin = (int)((verR - verL) / verST);
-        rotSX = (verL-verST);
-        rotDX = verL+(nbin*verST)+verST;
-
-        printf("\n                    ======>    VERTICAL SCAN    <======\n\n");
-        printf("Total Position: %d   from   %.1f microns to   %.1f microns  @ %d microns\n"
-               ,Nsteps_ver+1,up_ver_first,up_ver_last,verST);
-        printf("cradle@ %.1f murad rotational@ %.1f murad\n",gonio_crad,gonio_rot);
-        scanflag = 5 ;
-    }
-    
     printf("\nnbin = %d\n", nbin);
 
     ///////////////////////////////////////////////////////////////////////
@@ -344,20 +343,20 @@ sprintf(filesdir,"%s",argv[1]);
 #include "Cuts/CutFile.C"
     
     if(CENTER == true){
-        detectX1 = (X_CUT_left+X_CUT_right)/2 - 5000.;
-        detectX2 = (X_CUT_left+X_CUT_right)/2 + 5000.;
-        detectY1 = (Y_CUT_left+Y_CUT_right)/2 - 5000.;
-        detectY2 = (Y_CUT_left+Y_CUT_right)/2 + 5000.;
+        detectX1 = (X_CUT_left+X_CUT_right)/2 - 10000.;
+        detectX2 = (X_CUT_left+X_CUT_right)/2 + 10000.;
+        detectY1 = (Y_CUT_left+Y_CUT_right)/2 - 10000.;
+        detectY2 = (Y_CUT_left+Y_CUT_right)/2 + 10000.;
     }
     else{
-        detectX1 = X_CUT_left- 5000.;
-        detectX2 = X_CUT_right+ 5000.;
-        detectY1 = Y_CUT_left- 5000.;
-        detectY2 = Y_CUT_right+ 5000.;
+        detectX1 = X_CUT_left- 10000.;
+        detectX2 = X_CUT_right+ 10000.;
+        detectY1 = Y_CUT_left- 10000.;
+        detectY2 = Y_CUT_right+ 10000.;
     }
     
-    detectX1=-20000;
-    detectX2=20000;
+    //detectX1=-20000;
+    //detectX2=20000;
 
     
     int detectXBin = int((detectX2-detectX1)/32)*4;// pixel per 16 microns
@@ -767,6 +766,7 @@ sprintf(filesdir,"%s",argv[1]);
                         if(!ONLYTREE)
                         {
                             
+
                             
                             if(CORRECT_TORSION)
                             {
@@ -782,7 +782,11 @@ sprintf(filesdir,"%s",argv[1]);
                             }
                             
                             
-                            
+                            if(CENTER){
+                            xCRY -= xMean;
+                            yCRY -= yMean;
+                            }
+                             
                             flagdivA = 0;
                             if( SQR(thXin-thXinCorr) < SQR(divAcutX) )
                                 if( SQR(thYin) < SQR(divAcutY) )
@@ -871,10 +875,13 @@ sprintf(filesdir,"%s",argv[1]);
 				
                             }
                             else if(scanflag==2) divcorr = thYin;
-                            
+                            else if(scanflag==0) divcorr = -xCRY*1.E-3;
+			    else if(scanflag==4) divcorr = -xCRY*1.E-3;
+			    else if(scanflag==5) divcorr = +yCRY*1.E-3;
+
                             if(scanflag==0) h2st = up_lin;
-			    if(scanflag==4) h2st = up_lin_2; //added in 2018
-			    if(scanflag==5) h2st = up_ver;   //added in 2018
+			    else if(scanflag==4) h2st = up_lin_2; //added in 2018
+			    else if(scanflag==5) h2st = up_ver;   //added in 2018
                             else if(scanflag==1) h2st = gonio_rot;
                             else if(scanflag==2) h2st = gonio_crad;
                             
