@@ -271,8 +271,6 @@ if(flagpos) h2dY1->Fill((float)h2st,deflY);
 
 h2dX0in->Fill((float)h2st+divcorr,deflX);
 
-
-
 if(flagpos) h2dX1u->Fill((float)h2st+divcorr,thXout);
 if(flagpos) h2dX1in->Fill((float)h2st+divcorr,deflX);
 if(flagpos) h2dX1inGO->Fill(gonio_rot+divcorr,deflX);
@@ -478,3 +476,33 @@ if(flagpos) h2dX1in2018PhInv->Fill((float)h2st-divcorr,deva[3]);
 if(flagpos) h2018PhthXinP->Fill(thXin,deva[3]);
 if(flagpos) h2018PhthYinP->Fill(thYin,deva[3]);
 
+//////////////////////////////////
+//////Multitrack Histograms//////
+/////////////////////////////////     //Included in 2018
+
+if(flagpos){
+//nStrip histograms
+hx1nStrip->Fill(nstrip[0]);
+hy1nStrip->Fill(nstrip[1]);
+hx2nStrip->Fill(nstrip[2]);
+hy2nStrip->Fill(nstrip[3]);
+hx3nStrip->Fill(nstrip[4]);
+hy3nStrip->Fill(nstrip[5]);
+
+//cluster histograms
+hx1Clu->Fill(cluster[0]);
+hy1Clu->Fill(cluster[1]);
+hx2Clu->Fill(cluster[2]);
+hy2Clu->Fill(cluster[3]);
+hx3Clu->Fill(cluster[4]);
+hy3Clu->Fill(cluster[5]);
+
+//Scan multitrack histograms
+
+hX3CluCrad->Fill(gonio_crad,cluster[4]);          
+hX3CluCrad_in->Fill(gonio_crad+thYin,cluster[4]);
+ 
+hX3CluRot->Fill(gonio_rot,cluster[4]);          
+hX3CluRot_in->Fill(gonio_rot+divcorr,cluster[4]);  
+
+}

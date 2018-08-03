@@ -310,7 +310,6 @@ TH2F *h2dX2C = new TH2F("h2dX2C","X beam deflection (#Delta#theta_{x}) Vs Goniom
 TH2F *h2dX2R = new TH2F("h2dX2R","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle (#phi_{x}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2);
 
 
-
 TH2F *h2dX0in   = new TH2F("h2dX0in","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*20,rotSX*2.,rotDX*2.,deflXBin,deflXmar1,deflXmar2);
 TH2F *h2dX1in = new TH2F("h2dX1in","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2*10,rotSX,rotDX,deflXBin,deflXmar1,deflXmar2);
 TH2F *h2dX1inGO = new TH2F("h2dX1inGO","X beam deflection (#Delta#theta_{x}) Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Horizontal Deflection Angle [#murad]",(nbin+4)*2*10,-1778676,-1776716,deflXBin,deflXmar1,deflXmar2);
@@ -630,3 +629,45 @@ for (torY = 0 ; torY <50 ; torY++)
 	hdeflXtor[torY] = new TH2F(Form("TORSIONY_%1d",torY),"",800,-800,800,deflXBin,deflXmar1,deflXmar2);}
        if (torY>=10) {hdeflXtor[torY] = new TH2F(Form("TORSIONY_%2d",torY),"",800,-800,800,deflXBin,deflXmar1,deflXmar2); } 
 }
+
+
+//////////////////////////////////
+//////Multitrack Histograms//////
+/////////////////////////////////
+
+//nStrip histograms
+TH1F *hx1nStrip = new TH1F("hx1nStrip","X1 nStrip;X1 nStrip",20,0,20);
+TH1F *hx2nStrip = new TH1F("hx2nStrip","X2 nStrip;X2 nStrip",20,0,20);
+TH1F *hx3nStrip = new TH1F("hx3nStrip","X3 nStrip;X3 nStrip",20,0,20);
+TH1F *hy1nStrip = new TH1F("hy1nStrip","Y1 nStrip;Y1 nStrip",20,0,20);
+TH1F *hy2nStrip = new TH1F("hy2nStrip","Y2 nStrip;Y2 nStrip",20,0,20);
+TH1F *hy3nStrip = new TH1F("hy3nStrip","Y3 nStrip;Y3 nStrip",20,0,20);
+
+//cluster histograms
+TH1F *hx1Clu = new TH1F("hx1Clu","X1 Clu;X1 Clu",20,0,20);
+TH1F *hx2Clu = new TH1F("hx2Clu","X2 Clu;X2 Clu",20,0,20);
+TH1F *hx3Clu = new TH1F("hx3Clu","X3 Clu;X3 Clu",20,0,20);
+TH1F *hy1Clu = new TH1F("hy1Clu","Y1 Clu;Y1 Clu",20,0,20);
+TH1F *hy2Clu = new TH1F("hy2Clu","Y2 Clu;Y2 Clu",20,0,20);
+TH1F *hy3Clu = new TH1F("hy3Clu","Y3 Clu;Y3 Clu",20,0,20);
+
+
+TH1F *hx3CluM = new TH1F("hx3CluM","X3 Clu mutli-tracks;X3 Clu",20,0,20);
+TH1F *hy3CluM = new TH1F("hy3CluM","Y3 Clu mutli-tracks;Y3 Clu",20,0,20);
+
+
+///Multitrack Scan Histograms////
+
+//Scan Histograms added in 2018 (Cluster vr. rotational scan)
+TH2F *hX3CluRot = new TH2F("hX3CluRot", "X3 Number of Clusters Vs Rotational Angle; Rotational Angle [#murad]; N",(nbin+4)*2,rotSX+rotcenter,rotDX+rotcenter,20,0,20);
+TH2F *hX3CluRot_in = new TH2F("hX3CluRot_in","X3 Number of Clusters Vs Rotational + X in-going angle (#theta_{x,in}); Rotational + X in-going  Angle [#murad]; N",(nbin+4)*2,rotSX+rotcenter,rotDX+rotcenter,20,0,20);
+
+
+
+//Scan Histograms added in 2018 (Cluster vr. cradle scan)  
+TH2F *hX3CluCrad = new TH2F("hX3CluCrad", "X3 Number of Clusters Vs Cradle Angle; Cradle Angle [#murad]; N",(nbin+4)*2,rotSX+cradcenter,rotDX+cradcenter,20,0,20);
+TH2F *hX3CluCrad_in = new TH2F("hX3CluCrad_in","X3 Number of Clusters Vs Cradle + Y in-going angle (#theta_{y,in}); Cradle + Y in-going  Angle [#murad]; N",(nbin+4)*2,rotSX+cradcenter,rotDX+cradcenter,20,0,20);
+
+
+//
+

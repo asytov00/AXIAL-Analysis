@@ -1,5 +1,3 @@
-///PROGRAM MODIFIED BY T. MAIOLINO (2018)
-
 #include <string>
 #include <iostream>
 #include <math.h>
