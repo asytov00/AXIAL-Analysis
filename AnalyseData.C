@@ -413,20 +413,20 @@ int main(){
     strftime (buffer,80,"%y%m%d-%H%M%S",timeinfo);
     
     printf ( "The current local time is: %s", buffer );
-    sprintf(prova1,"mkdir %s/DATA/ROOT_FILES",homeDir);
+    sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS",homeDir);
     
     system(prova1);
     
     if(N_RUNS == 1){
         if(SAVE)
         {
-            sprintf(prova1,"mkdir %s/DATA/ROOT_FILES/SAVE",homeDir);
+            sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE",homeDir);
             system(prova1);
-            sprintf(prova1,"mkdir %s/DATA/ROOT_FILES/SAVE/run%06d",homeDir,runnumb);
+            sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d",homeDir,runnumb);
             system(prova1);
-            sprintf(rootfilename,"%s/DATA/ROOT_FILES/SAVE/run%06d/%s.root",homeDir,runnumb,buffer);
-            sprintf(configfilename, "%s/DATA/ROOT_FILES/SAVE/run%06d/%s.txt",homeDir,runnumb,buffer);
-            sprintf(asciifilename,"%s/DATA/ROOT_FILES/SAVE/run%06d/%s.dat",homeDir,runnumb,buffer);
+            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.root",homeDir,runnumb,buffer);
+            sprintf(configfilename, "%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.txt",homeDir,runnumb,buffer);
+            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.dat",homeDir,runnumb,buffer);
         }
         //else
         //{
@@ -436,9 +436,9 @@ int main(){
         //}
         else
         {
-            sprintf(rootfilename,"%s/DATA/ROOT_FILES/run%06d.root",homeDir,runnumb);
-            sprintf(configfilename,"%s/DATA/ROOT_FILES/temp.txt",homeDir);
-            sprintf(asciifilename,"%s/DATA/ROOT_FILES/temp.dat",homeDir);
+            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/run%06d.root",homeDir,runnumb);
+            sprintf(configfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTSS/temp.txt",homeDir);
+            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.dat",homeDir);
         }
     }
     else if(N_RUNS > 1){
@@ -454,9 +454,9 @@ int main(){
         }
         else
         {            
-            sprintf(rootfilename,"%s/DATA/ROOT_FILES/run%06d-%06d.root",homeDir,FIRST_RUN,LAST_RUN);
-            sprintf(configfilename,"%s/DATA/ROOT_FILES/temp.txt",homeDir);
-            sprintf(asciifilename,"%s/DATA/ROOT_FILES/temp.dat",homeDir);
+            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/run%06d-%06d.root",homeDir,FIRST_RUN,LAST_RUN);
+            sprintf(configfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.txt",homeDir);
+            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.dat",homeDir);
             
         }
     }
@@ -890,9 +890,9 @@ int main(){
                                 if(YEAR==2017){
                                     divcorr = +thXin; //NOT CHECKED
                                 }
-			 	//if(YEAR==201){ //inserted in 2018
-                                //    divcorr = +/-thXin; 
-                                //}
+			 	if(YEAR==2018){ //inserted in 2018
+                                    divcorr = +thXin; 
+                                }
 				
                             }
                             else if(scanflag==2) divcorr = thYin;
