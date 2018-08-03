@@ -421,19 +421,19 @@ sprintf(filesdir,"%s",argv[1]);
     strftime (buffer,80,"%y%m%d-%H%M%S",timeinfo);
     
     printf ( "The current local time is: %s", buffer );
-    sprintf(prova1,"mkdir SAVE");
+    sprintf(prova1,"mkdir ../ROOT_OUTPUTS");
     
     system(prova1);
     
     if(N_RUNS == 1){
-            sprintf(rootfilename,"SAVE/run%06d.root",runnumb);
-            sprintf(configfilename,"SAVE/temp.txt");
-            sprintf(asciifilename,"SAVE/temp.dat");
+            sprintf(rootfilename,"../ROOT_OUTPUTS/run%06d.root",runnumb);
+            sprintf(configfilename,"../ROOT_OUTPUTS/temp.txt");
+            sprintf(asciifilename,"../ROOT_OUTPUTS/temp.dat");
     }
     else if(N_RUNS > 1){
-            sprintf(rootfilename,"SAVE/run%06d-%06d.root",FIRST_RUN,LAST_RUN);
-            sprintf(configfilename,"SAVE/temp.txt");
-            sprintf(asciifilename,"SAVE/temp.dat");
+            sprintf(rootfilename,"../ROOT_OUTPUTS/run%06d-%06d.root",FIRST_RUN,LAST_RUN);
+            sprintf(configfilename,"../ROOT_OUTPUTS/temp.txt");
+            sprintf(asciifilename,"../ROOT_OUTPUTS/temp.dat");
     }
     
     
