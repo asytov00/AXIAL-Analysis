@@ -6,7 +6,7 @@
 
 
 // ST1004 Si axes [110] plane (111) 
-if( (runnumb >= 112000 ))//&& runnumb <= 113103 ))
+if( (runnumb >= 112000 && runnumb <= 113103 ))
 {
     deflXmar1=-512.;    deflXmar2=512.;
     deflYmar1=-512.;    deflYmar2=512.;
@@ -78,20 +78,20 @@ if( (runnumb >= 113140 && runnumb <= 114000 ))
 //2018 Silicon Strip
 if( (runnumb >= 300087))
 {
-    deflXmar1=-512.;    deflXmar2=512.;
-    deflYmar1=-512.;    deflYmar2=512.;
+    deflXmar1=-128.;    deflXmar2=128.;
+    deflYmar1=-128.;    deflYmar2=128.;
     
-    thXin=512.;
-    thXout=256.;
+    thXin=128.;
+    thXout=128.;
     
     torsion_posYthX=0.;//murad on mm
     //torsion_posXthX=0.;//20.;//murad on mm
     meanchang = 0.;
    
-    X_CUT_left = 10200.;  
-    X_CUT_right =11900.;
-    Y_CUT_left = 5000;//10000.;    
-    Y_CUT_right = 20000;//13800.;
+    X_CUT_left  = 10200.;  
+    X_CUT_right = 11900.;
+    Y_CUT_left  = 10000;//10000.;    
+    Y_CUT_right = 12000;//13800.;
     //Y_CUT_left = 10500;    Y_CUT_right = 11500;
     
     DEVA_CUT = 600.;

@@ -15,11 +15,19 @@
 #include "parameters.h"
 
 
-int main(){
+int main(int argc, char* argv[]){
     ///////////////////////////////////////////////////////////////////////
     /////////////////////// Main variables Definition /////////////////////
     ///////////////////////////////////////////////////////////////////////
   //Testing   
+   char filesdir[512];
+if (argc<2){
+printf("\n\n!!!!!!!!!!\nPlease select the data files directory\n!!!!!!!!!!\n\n");
+return 0 ;
+}
+else{
+sprintf(filesdir,"%s",argv[1]);
+}
     
 #include "Source/AnalyseDataVariables.C" 
     ///////////////////////////////////////////////////////////////////////
@@ -413,52 +421,19 @@ int main(){
     strftime (buffer,80,"%y%m%d-%H%M%S",timeinfo);
     
     printf ( "The current local time is: %s", buffer );
-    sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS",homeDir);
+    sprintf(prova1,"mkdir SAVE");
     
     system(prova1);
     
     if(N_RUNS == 1){
-        if(SAVE)
-        {
-            sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE",homeDir);
-            system(prova1);
-            sprintf(prova1,"mkdir %s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d",homeDir,runnumb);
-            system(prova1);
-            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.root",homeDir,runnumb,buffer);
-            sprintf(configfilename, "%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.txt",homeDir,runnumb,buffer);
-            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/SAVE/run%06d/%s.dat",homeDir,runnumb,buffer);
-        }
-        //else
-        //{
-        //    sprintf(rootfilename,"%s/DATA/ROOT_FILES/run%06d.root",homeDir,runnumb);
-        //    sprintf(configfilename,"%s/DATA/ROOT_FILES/temp.txt",homeDir);
-        //    sprintf(asciifilename,"%s/DATA/ROOT_FILES/temp.dat",homeDir);
-        //}
-        else
-        {
-            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/run%06d.root",homeDir,runnumb);
-            sprintf(configfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTSS/temp.txt",homeDir);
-            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.dat",homeDir);
-        }
+            sprintf(rootfilename,"SAVE/run%06d.root",runnumb);
+            sprintf(configfilename,"SAVE/temp.txt");
+            sprintf(asciifilename,"SAVE/temp.dat");
     }
     else if(N_RUNS > 1){
-        if(SAVE)
-        {
-            sprintf(prova1,"mkdir %s/DATA/ROOT_FILES/SAVE",homeDir);
-            system(prova1);
-            sprintf(prova1,"mkdir %s/DATA/ROOT_FILES/SAVE/run%06d-%06d",homeDir,FIRST_RUN,LAST_RUN);
-            system(prova1);
-            sprintf(rootfilename,"%s/DATA/ROOT_FILES/SAVE/run%06d-%06d/%s.root",homeDir,FIRST_RUN,LAST_RUN,buffer);
-            sprintf(configfilename,"%s/DATA/ROOT_FILES/SAVE/run%06d-%06d/%s.txt",homeDir,FIRST_RUN,LAST_RUN,buffer);
-            sprintf(asciifilename,"%s/DATA/ROOT_FILESS/SAVE/run%06d-%06d/%s.dat",homeDir,FIRST_RUN,LAST_RUN,buffer);
-        }
-        else
-        {            
-            sprintf(rootfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/run%06d-%06d.root",homeDir,FIRST_RUN,LAST_RUN);
-            sprintf(configfilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.txt",homeDir);
-            sprintf(asciifilename,"%s/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/ROOT_OUTPUTS/temp.dat",homeDir);
-            
-        }
+            sprintf(rootfilename,"SAVE/run%06d-%06d.root",FIRST_RUN,LAST_RUN);
+            sprintf(configfilename,"SAVE/temp.txt");
+            sprintf(asciifilename,"SAVE/temp.dat");
     }
     
     

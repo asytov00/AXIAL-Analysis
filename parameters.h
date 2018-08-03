@@ -9,7 +9,7 @@
 
 #define N_RUNS 1
 
-#define RUN_NUMB  300101
+#define RUN_NUMB  300102
 #define RUN_NUMB2 112287
 #define RUN_NUMB3 112288
 #define RUN_NUMB4 112965
@@ -77,9 +77,14 @@
 #define Zg17_1   5.821     // Goniometer-Crystal position
 #define Z317_1   11.521      // SD3
 
-#define Z118_1   0.000      // SD1
-#define Z218_1   11.9      // SD2
-#define Zg18_1   12.375      // Goniometer-Crystal position
-#define Z318_1   17.273      // SD3
+#define Z118_1   0.000      // SD1?
+#define Z218_1   11.9      // SD2?
+#define Zg18_1   12.375      // Goniometer-Crystal position?
+#define Z318_1   17.227      // SD3?
+
+#define Z118_2   0.000      // SD1?
+#define Z218_2   11.9      // SD2?
+#define Zg18_2   12.375      // Goniometer-Crystal position?
+#define Z318_2   17.227      // SD3?
 
 #endif

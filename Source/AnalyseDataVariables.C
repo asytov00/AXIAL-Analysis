@@ -245,7 +245,7 @@ if(N_RUNS==10) LAST_RUN = RUN_NUMB10;
 
 ////// YEAR RUN SELECTION //////
 
-char filesdir[512];
+//char filesdir[512];
 
 
 if(YEAR==2010){
@@ -253,7 +253,7 @@ if(YEAR==2010){
     Z2 = Z210_1;
     Zg = Zg10_1;
     Z3 = Z310_1;
-    sprintf(filesdir,"/media/1TB/h8_june2010/ascii");
+  //  sprintf(filesdir,"/media/1TB/h8_june2010/ascii");
 }
 
 if(YEAR==2012){
@@ -261,7 +261,7 @@ if(YEAR==2012){
     Z2 = Z212_1;
     Zg = Zg12_1;
     Z3 = Z312_1;
-    sprintf(filesdir,"/media/1TB/h4h8_july2012/ascii");
+    //sprintf(filesdir,"/media/1TB/h4h8_july2012/ascii");
 }
 
 if(YEAR==2014){
@@ -269,7 +269,7 @@ if(YEAR==2014){
     Z2 = Z214_1;
     Zg = Zg14_1;
     Z3 = Z314_1;
-    sprintf(filesdir,"/media/1TB/h4_nov2014/ascii");
+    //sprintf(filesdir,"/media/1TB/h4_nov2014/ascii");
 }
 
 if(YEAR==2014 && MONTH==12){
@@ -277,7 +277,7 @@ if(YEAR==2014 && MONTH==12){
     Z2 = Z214_1;
     Zg = Zg14_1;
     Z3 = Z314_1;
-    sprintf(filesdir,"/home/ebagli/DATA/UA9");
+    //sprintf(filesdir,"/home/ebagli/DATA/UA9");
 }
 
 if(YEAR==2015 && MONTH==2){
@@ -285,7 +285,7 @@ if(YEAR==2015 && MONTH==2){
     Z2 = Z214_1;
     Zg = Zg14_1;
     Z3 = Z314_1;
-    sprintf(filesdir,"/home/ebagli/DATA/UA9");
+    //sprintf(filesdir,"/home/ebagli/DATA/UA9");
 }
 
 if(YEAR==2015 && MONTH==9){
@@ -304,14 +304,14 @@ if(YEAR==2016 && MONTH==7){
     Z3 = Z316_1;
     //sprintf(filesdir,"/home/ebagli/DATA/h4sep2015");
   //  sprintf(filesdir,"/media/leo/Elements/DATA_H4_2016/data_fe2");
-sprintf(filesdir,"/media/leo/AudioSeagate/DATA-H4-2016");
+//sprintf(filesdir,"/media/leo/AudioSeagate/DATA-H4-2016");
 //sprintf(filesdir,"/home/leo/datadir");
     if(RUN_NUMB==112392 || RUN_NUMB==112295 ||
        RUN_NUMB==112323 || RUN_NUMB==112299 ||
        RUN_NUMB==112401 || RUN_NUMB==112410 ||
        RUN_NUMB==112413 || RUN_NUMB==112438 ||
        RUN_NUMB==112454 || RUN_NUMB==112455){
-        sprintf(filesdir,"/home/leo/DATA/H4-2016");
+      //  sprintf(filesdir,"/home/leo/DATA/H4-2016");
     }
 }
 
@@ -331,7 +331,7 @@ if(YEAR==2017 && MONTH==7){
     Zg = Zg17_1;
     Z3 = Z317_1;
 
-sprintf(filesdir,"/home/alexei/Alexei/Channeling/Experiment/CERN2017/DATA-H4-2017/"); ///data/Alexei/Channeling/Experiment/CERN2016/DATA_H4_2016/data_fe2/");
+//sprintf(filesdir,"/home/alexei/Alexei/Channeling/Experiment/CERN2017/DATA-H4-2017/"); ///data/Alexei/Channeling/Experiment/CERN2016/DATA_H4_2016/data_fe2/");
 
 }
 
@@ -341,8 +341,8 @@ if(YEAR==2018 && MONTH==8){
     Zg = Zg18_1;
     Z3 = Z318_1;
 
-sprintf(filesdir,"/Users/taismaiolino/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/data2018"); ///data/Alexei/Channeling/Experiment/CERN2016/DATA_H4_2016/data_fe2/");
-
+//sprintf(filesdir,"/Users/taismaiolino/INFN_FERRARA/INFN_ROOT/AXIAL-Analysis/data2018"); ///data/Alexei/Channeling/Experiment/CERN2016/DATA_H4_2016/data_fe2/");
+//sprintf(filesdir,"/data/insudaq/ascii_axial18/");
 }
 
 sprintf(tempdir,"tempfile.txt");
