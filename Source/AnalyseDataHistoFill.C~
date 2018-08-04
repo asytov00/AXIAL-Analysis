@@ -536,8 +536,8 @@ if(flagposx) hClu3posYP->Fill(yCRY,cluster[4]);
 
 if(flagpos) hthXinP_gamma->Fill(thXin,calo_crys_tot_energy_gamma);
 if(flagpos) hthYinP_gamma->Fill(thYin,calo_crys_tot_energy_gamma);
-if(flagpos) hthXinP_eslow->Fill(thXin,calo_crys_tot_energy_eslow);
-if(flagpos) hthYinP_eslow->Fill(thYin,calo_crys_tot_energy_eslow);
-if(flagpos) hthXinP_efast->Fill(thXin,calo_crys_tot_energy_efast);
-if(flagpos) hthYinP_efast->Fill(thYin,calo_crys_tot_energy_efast);
+if(flagpos) hthXinP_eslow->Fill(thXin,calo_crys_tot_energy_gamma);
+if(flagpos) hthYinP_eslow->Fill(thYin,calo_crys_tot_energy_gamma);
+if(flagpos) hthXinP_efast->Fill(thXin,calo_crys_tot_energy_gamma);
+if(flagpos) hthYinP_efast->Fill(thYin,calo_crys_tot_energy_gamma);
 
