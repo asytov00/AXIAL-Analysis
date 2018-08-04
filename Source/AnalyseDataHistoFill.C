@@ -497,33 +497,33 @@ if(flagpos) h2018PhthYinP_eslow->Fill(thYin,calo_crys_tot_energy_eslow);
 
 if(flagpos){
 //nStrip histograms
-hx1nStrip->Fill(nstrip[0]);
-hy1nStrip->Fill(nstrip[1]);
-hx2nStrip->Fill(nstrip[2]);
-hy2nStrip->Fill(nstrip[3]);
-hx3nStrip->Fill(nstrip[4]);
-hy3nStrip->Fill(nstrip[5]);
+hx1nStripP->Fill(nstrip[0]);
+hy1nStripP->Fill(nstrip[1]);
+hx2nStripP->Fill(nstrip[2]);
+hy2nStripP->Fill(nstrip[3]);
+hx3nStripP->Fill(nstrip[4]);
+hy3nStripP->Fill(nstrip[5]);
 
 //cluster histograms
-hx1Clu->Fill(cluster[0]);
-hy1Clu->Fill(cluster[1]);
-hx2Clu->Fill(cluster[2]);
-hy2Clu->Fill(cluster[3]);
-hx3Clu->Fill(cluster[4]);
-hy3Clu->Fill(cluster[5]);
+hx1CluP->Fill(cluster[0]);
+hy1CluP->Fill(cluster[1]);
+hx2CluP->Fill(cluster[2]);
+hy2CluP->Fill(cluster[3]);
+hx3CluP->Fill(cluster[4]);
+hy3CluP->Fill(cluster[5]);
 
 //Scan multitrack histograms
 
-hX3CluCrad->Fill(gonio_crad,cluster[4]);          
-hX3CluCrad_in->Fill(gonio_crad+thYin,cluster[4]);
+hX3CluCradP->Fill((float)h2st,cluster[4]);          
+hX3CluCrad_inP->Fill((float)h2st+divcorr,cluster[4]);
  
-hX3CluRot->Fill(gonio_rot,cluster[4]);          
-hX3CluRot_in->Fill(gonio_rot+divcorr,cluster[4]);  
+hX3CluRotP->Fill((float)h2st,cluster[4]);          
+hX3CluRot_inP->Fill((float)h2st+divcorr,cluster[4]);  
 
 }
 
-h2Clu3_0in->Fill((float)h2st+divcorr,cluster[4]);
-if(flagpos) h2Clu3_1in->Fill((float)h2st+divcorr,cluster[4]);
+h2Clu3_0in->Fill((float)h2st+divcorr,cluster[4]); 
+if(flagpos) h2Clu3_1in->Fill((float)h2st+divcorr,cluster[4]); //it has larger X-axis range than hX3CluCrad_inP
 if(flagpos) h2Clu3_1inInv->Fill((float)h2st-divcorr,cluster[4]);
 
 if(flagpos) hClu3thXinP->Fill(thXin,cluster[4]);

@@ -171,10 +171,6 @@ float deflXmar1=-64.;
 float deflXmar2=64.;
 float deflYmar1=-64.;
 float deflYmar2=64.;
-
-float cradcenter=0.; //for multitrack histrogram production (hX3CluCrad and hX3CluCrad_in) (added in 2018)
-float rotcenter=0.; //for multitrack histogram production (hX3CluRot and hX3CluRot_in)     (added in 2018)
-
 float yCenter=0.96E4;// mum -> position of the center of the crystal
 float divAcutX=5.;
 float divAcutY=5.;

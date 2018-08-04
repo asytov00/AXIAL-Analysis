@@ -658,37 +658,31 @@ for (torY = 0 ; torY <50 ; torY++)
 /////////////////////////////////
 
 //nStrip histograms
-TH1F *hx1nStrip = new TH1F("hx1nStrip","X1 nStrip;X1 nStrip",20,0,20);
-TH1F *hx2nStrip = new TH1F("hx2nStrip","X2 nStrip;X2 nStrip",20,0,20);
-TH1F *hx3nStrip = new TH1F("hx3nStrip","X3 nStrip;X3 nStrip",20,0,20);
-TH1F *hy1nStrip = new TH1F("hy1nStrip","Y1 nStrip;Y1 nStrip",20,0,20);
-TH1F *hy2nStrip = new TH1F("hy2nStrip","Y2 nStrip;Y2 nStrip",20,0,20);
-TH1F *hy3nStrip = new TH1F("hy3nStrip","Y3 nStrip;Y3 nStrip",20,0,20);
+TH1F *hx1nStripP = new TH1F("hx1nStripP","X1 nStrip;X1 nStrip",20,0,20);
+TH1F *hx2nStripP = new TH1F("hx2nStripP","X2 nStrip;X2 nStrip",20,0,20);
+TH1F *hx3nStripP = new TH1F("hx3nStripP","X3 nStrip;X3 nStrip",20,0,20);
+TH1F *hy1nStripP = new TH1F("hy1nStripP","Y1 nStrip;Y1 nStrip",20,0,20);
+TH1F *hy2nStripP = new TH1F("hy2nStripP","Y2 nStrip;Y2 nStrip",20,0,20);
+TH1F *hy3nStripP = new TH1F("hy3nStripP","Y3 nStrip;Y3 nStrip",20,0,20);
 
 //cluster histograms
-TH1F *hx1Clu = new TH1F("hx1Clu","X1 Clu;X1 Clu",20,0,20);
-TH1F *hx2Clu = new TH1F("hx2Clu","X2 Clu;X2 Clu",20,0,20);
-TH1F *hx3Clu = new TH1F("hx3Clu","X3 Clu;X3 Clu",20,0,20);
-TH1F *hy1Clu = new TH1F("hy1Clu","Y1 Clu;Y1 Clu",20,0,20);
-TH1F *hy2Clu = new TH1F("hy2Clu","Y2 Clu;Y2 Clu",20,0,20);
-TH1F *hy3Clu = new TH1F("hy3Clu","Y3 Clu;Y3 Clu",20,0,20);
-
-
-TH1F *hx3CluM = new TH1F("hx3CluM","X3 Clu mutli-tracks;X3 Clu",20,0,20);
-TH1F *hy3CluM = new TH1F("hy3CluM","Y3 Clu mutli-tracks;Y3 Clu",20,0,20);
-
+TH1F *hx1CluP = new TH1F("hx1CluP","X1 Clu;X1 Clu",20,0,20);
+TH1F *hx2CluP = new TH1F("hx2CluP","X2 Clu;X2 Clu",20,0,20);
+TH1F *hx3CluP = new TH1F("hx3CluP","X3 Clu;X3 Clu",20,0,20);
+TH1F *hy1CluP = new TH1F("hy1CluP","Y1 Clu;Y1 Clu",20,0,20);
+TH1F *hy2CluP = new TH1F("hy2CluP","Y2 Clu;Y2 Clu",20,0,20);
+TH1F *hy3CluP = new TH1F("hy3CluP","Y3 Clu;Y3 Clu",20,0,20);
 
 ///Multitrack Scan Histograms////
 
 //Scan Histograms added in 2018 (Cluster vr. rotational scan)
-TH2F *hX3CluRot = new TH2F("hX3CluRot", "X3 Number of Clusters Vs Rotational Angle; Rotational Angle [#murad]; N",(nbin+4)*2,rotSX+rotcenter,rotDX+rotcenter,20,0,20);
-TH2F *hX3CluRot_in = new TH2F("hX3CluRot_in","X3 Number of Clusters Vs Rotational + X in-going angle (#theta_{x,in}); Rotational + X in-going  Angle [#murad]; N",(nbin+4)*2,rotSX+rotcenter,rotDX+rotcenter,20,0,20);
+TH2F *hX3CluRotP = new TH2F("hX3CluRotP", "X3 Number of Clusters Vs Rotational Angle; Rotational Angle [#murad]; N",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *hX3CluRot_inP = new TH2F("hX3CluRot_inP","X3 Number of Clusters Vs Rotational + X in-going angle (#theta_{x,in}); Rotational + X in-going  Angle [#murad]; N",(nbin+4)*2,rotSX,rotDX,20,0,20);
+  
+TH2F *hX3CluCradP = new TH2F("hX3CluCradP", "X3 Number of Clusters Vs Cradle Angle; Cradle Angle [#murad]; N",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *hX3CluCrad_inP = new TH2F("hX3CluCrad_inP","X3 Number of Clusters Vs Cradle + Y in-going angle (#theta_{y,in}); Cradle + Y in-going  Angle [#murad]; N",(nbin+4)*20,rotSX,rotDX,20,0,20);
 
-
-
-//Scan Histograms added in 2018 (Cluster vr. cradle scan)  
-TH2F *hX3CluCrad = new TH2F("hX3CluCrad", "X3 Number of Clusters Vs Cradle Angle; Cradle Angle [#murad]; N",(nbin+4)*2,rotSX+cradcenter,rotDX+cradcenter,20,0,20);
-TH2F *hX3CluCrad_in = new TH2F("hX3CluCrad_in","X3 Number of Clusters Vs Cradle + Y in-going angle (#theta_{y,in}); Cradle + Y in-going  Angle [#murad]; N",(nbin+4)*2,rotSX+cradcenter,rotDX+cradcenter,20,0,20);
+//***************
 
 TH2F *hClu3thXinP = new TH2F("hClu3thXinP","X Cluster 3 VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Cluster",thXinBin,-thXin+0.5,thXin+0.5,20,-0.5,19.5);
 TH2F *hClu3thYinP = new TH2F("hClu3thYinP","X Cluster 3 VS Y in-going angle (#theta_{y,in}); Vertical Incoming Angle [#murad]; Cluster",thXinBin,-thXin+0.5,thXin+0.5,20,-0.5,19.5);
