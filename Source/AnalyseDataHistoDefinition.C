@@ -194,7 +194,10 @@ TH2F *hdeflYposY = new TH2F("hdeflYposY","Y beam deflection  (#Delta#theta_{y}) 
 
 TH2F *hdeflXposXCry = new TH2F("hdeflXposXCry","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,deflXmar1,deflXmar2);
 TH2F *hdeflXposYCry = new TH2F("hdeflXposYCry","X beam deflection  (#Delta#theta_{x}) Vs Y position at the crystal (y_{in}); Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",detectYBin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);
-
+TH2F *hClu3posX = new TH2F("hClu3posX","; Horizontal Incoming Position [#mum];Cluster",detectXBin,detectX1,detectX2,20,-0.5,19.5);
+TH2F *hClu3posY = new TH2F("hClu3posY","; Vertical Incoming Position [#mum];Cluster",detectYBin,detectY1,detectY2,20,-0.5,19.5);
+TH2F *hClu3posXP = new TH2F("hClu3posXP","; Horizontal Incoming Position [#mum];Cluster",detectXBin,detectX1,detectX2,20,-0.5,19.5);
+TH2F *hClu3posYP = new TH2F("hClu3posYP","; Vertical Incoming Position [#mum];Cluster",detectYBin,detectY1,detectY2,20,-0.5,19.5);
 
 TH2F *hdeflXposXA = new TH2F("hdeflXposXA","X beam deflection  (#Delta#theta_{x}) Vs X position at the crystal (x_{in}); Horizontal Incoming Position [#mum];Horizontal Deflection Angle [#murad]",detectXBin,detectX1,detectX2,deflXBin,deflXmar1,deflXmar2);
 TH2F *hdeflXposYA = new TH2F("hdeflXposYA","X beam deflection  (#Delta#theta_{x}) Vs Y position at the crystal (y_{in}); Vertical Incoming Position [#mum]; Horizontal Deflection Angle [#murad]",detectYBin,detectY1,detectY2,deflXBin,deflXmar1,deflXmar2);

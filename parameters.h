@@ -28,7 +28,7 @@
 #define RUN_NUMB16 97736
 #define RUN_NUMB17 97736
 
-#define N_FILES 0 // number of files for a single run to be analyzed; 0 == all files
+#define N_FILES 100 // number of files for a single run to be analyzed; 0 == all files
 #define N_FILES_IN 1 //starting number of files to be analyzed
 
 //// OPTIONS

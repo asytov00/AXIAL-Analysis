@@ -109,10 +109,10 @@ if( (runnumb >= 300167))
     //torsion_posXthX=0.;//20.;//murad on mm
     meanchang = 0.;
    
-    X_CUT_left  = 10200.;  
-    X_CUT_right = 11900.;
-    Y_CUT_left  = 10000;//10000.;    
-    Y_CUT_right = 12000;//13800.;
+    X_CUT_left  = 10000.;  
+    X_CUT_right = 14000.;
+    Y_CUT_left  = 8100;//10000.;    
+    Y_CUT_right = 12600;//13800.;
     //Y_CUT_left = 10500;    Y_CUT_right = 11500;
     
     DEVA_CUT = 600.;

@@ -513,3 +513,8 @@ if(flagpos) h2Clu3_1in->Fill((float)h2st+divcorr,cluster[4]);
 if(flagpos) h2Clu3_1inInv->Fill((float)h2st-divcorr,cluster[4]);
 
 
+hClu3posX->Fill(xCRY,cluster[4]);
+hClu3posY->Fill(yCRY,cluster[4]);
+if(flagposy) hClu3posXP->Fill(xCRY,cluster[4]);
+if(flagposx) hClu3posYP->Fill(yCRY,cluster[4]);
+
