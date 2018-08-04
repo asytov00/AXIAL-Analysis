@@ -472,10 +472,24 @@ for (torY = 0 ; torY <50 ; torY++)
 for (int ii111 = 0 ; ii111 <8 ; ii111++){
     hCalo2018ADC[ii111]->Fill(deva[ii111]);
 }
-if(flagpos) h2dX1in2018Ph->Fill((float)h2st+divcorr,deva[3]);
-if(flagpos) h2dX1in2018PhInv->Fill((float)h2st-divcorr,deva[3]);
-if(flagpos) h2018PhthXinP->Fill(thXin,deva[3]);
-if(flagpos) h2018PhthYinP->Fill(thYin,deva[3]);
+//scan plots for gamma 2018
+if(flagpos) h2dX1in2018Ph_gamma->Fill((float)h2st+divcorr,calo_crys_tot_energy_gamma);
+if(flagpos) h2dX1in2018PhInv_gamma->Fill((float)h2st-divcorr,calo_crys_tot_energy_gamma);
+if(flagpos) h2018PhthXinP_gamma->Fill(thXin,calo_crys_tot_energy_gamma);
+if(flagpos) h2018PhthYinP_gamma->Fill(thYin,calo_crys_tot_energy_gamma);
+
+//scan plots for fast electrons/positrons 2018
+if(flagpos) h2dX1in2018Ph_efast->Fill((float)h2st+divcorr,calo_crys_tot_energy_efast);
+if(flagpos) h2dX1in2018PhInv_efast->Fill((float)h2st-divcorr,calo_crys_tot_energy_efast);
+if(flagpos) h2018PhthXinP_efast->Fill(thXin,calo_crys_tot_energy_efast);
+if(flagpos) h2018PhthYinP_efast->Fill(thYin,calo_crys_tot_energy_efast);
+
+//scan plots for slow electrons/positrons 2018
+if(flagpos) h2dX1in2018Ph_eslow->Fill((float)h2st+divcorr,calo_crys_tot_energy_eslow);
+if(flagpos) h2dX1in2018PhInv_eslow->Fill((float)h2st-divcorr,calo_crys_tot_energy_eslow);
+if(flagpos) h2018PhthXinP_eslow->Fill(thXin,calo_crys_tot_energy_eslow);
+if(flagpos) h2018PhthYinP_eslow->Fill(thYin,calo_crys_tot_energy_eslow);
+
 
 //////////////////////////////////
 //////Multitrack Histograms//////
