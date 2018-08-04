@@ -271,6 +271,7 @@ if(flagpos) h2dY1->Fill((float)h2st,deflY);
 
 h2dX0in->Fill((float)h2st+divcorr,deflX);
 
+
 if(flagpos) h2dX1u->Fill((float)h2st+divcorr,thXout);
 if(flagpos) h2dX1in->Fill((float)h2st+divcorr,deflX);
 if(flagpos) h2dX1inGO->Fill(gonio_rot+divcorr,deflX);
@@ -506,3 +507,9 @@ hX3CluRot->Fill(gonio_rot,cluster[4]);
 hX3CluRot_in->Fill(gonio_rot+divcorr,cluster[4]);  
 
 }
+
+h2Clu3_0in->Fill((float)h2st+divcorr,cluster[4]);
+if(flagpos) h2Clu3_1in->Fill((float)h2st+divcorr,cluster[4]);
+if(flagpos) h2Clu3_1inInv->Fill((float)h2st-divcorr,cluster[4]);
+
+

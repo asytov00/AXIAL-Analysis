@@ -624,6 +624,7 @@ sprintf(filesdir,"%s",argv[1]);
 */
 		    //                    if(nentries>MAX_ENTRIES) {break;}
                     
+			
                     if(YEAR==2015 && MONTH==9){
                         if(pos[0]==-9999.){
                             bReadLine = false;
