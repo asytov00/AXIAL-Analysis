@@ -527,21 +527,21 @@ int binCalo = (EmaxCalo - EminCalo) * 2.;
 
 //scan plots for gamma 2018
 TH2F *h2dX1in2018Ph_gamma = new TH2F("h2dX1in2018Ph_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
-TH2F *h2dX1in2018PhInv_gamma = new TH2F("h2dX1in2018PhInv_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
+TH2F *h2dX1in2018PhInv_gamma = new TH2F("h2dX1in2018PhInv_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle - X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 
 TH2F *h2018PhthXinP_gamma = new TH2F("h2018PhthXinP_gamma","Gamma: Calorimeter 4 VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 TH2F *h2018PhthYinP_gamma = new TH2F("h2018PhthYinP_gamma","Gamma: Calorimeter 4 VS Y in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 
 //scan plots for fast electrons/positrons 2018
 TH2F *h2dX1in2018Ph_efast = new TH2F("h2dX1in2018Ph_efast","e+/- fast: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
-TH2F *h2dX1in2018PhInv_efast = new TH2F("h2dX1in2018PhInv_efast","e+/- fast: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
+TH2F *h2dX1in2018PhInv_efast = new TH2F("h2dX1in2018PhInv_efast","e+/- fast: Calorimeter 4 Vs Goniometer rotation angle - X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 
 TH2F *h2018PhthXinP_efast = new TH2F("h2018PhthXinP_efast","e+/- fast: Calorimeter 4 VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 TH2F *h2018PhthYinP_efast = new TH2F("h2018PhthYinP_efast","e+/- fast: Calorimeter 4 VS Y in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 
 //scan plots for slow electrons/positrons 2018
 TH2F *h2dX1in2018Ph_eslow = new TH2F("h2dX1in2018Ph_eslow","e+/- slow: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
-TH2F *h2dX1in2018PhInv_eslow = new TH2F("h2dX1in2018PhInv_eslow","e+/- slow: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
+TH2F *h2dX1in2018PhInv_eslow = new TH2F("h2dX1in2018PhInv_eslow","e+/- slow: Calorimeter 4 Vs Goniometer rotation angle - X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 
 TH2F *h2018PhthXinP_eslow = new TH2F("h2018PhthXinP_eslow","e+/- slow: Calorimeter 4 VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 TH2F *h2018PhthYinP_eslow = new TH2F("h2018PhthYinP_eslow","e+/- slow: Calorimeter 4 VS Y in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
@@ -694,4 +694,14 @@ TH2F *hthXinP_eslow = new TH2F("hthXinP_eslow","Gamma VS X in-going angle (#thet
 TH2F *hthYinP_eslow = new TH2F("hthYinP_eslow","Gamma VS Y in-going angle (#theta_{y,in}); Vertical Incoming Angle [#murad]; Energy [GeV}",thXinBin,-thXin+0.5,thXin+0.5,binCalo,EminCalo,EmaxCalo);
 
 //
+
+//Scintillator histograms 2018
+TH2F *hthXinScinP= new TH2F("hthXinScinP","Scintillator VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Scintillator",thXinBin,-thXin+0.5,thXin+0.5,20,-0.5,19.5);
+TH2F *hthYinScinP= new TH2F("hthYinScinP","Scintillator VS Y in-going angle (#theta_{y,in}); Horizontal Incoming Angle [#murad]; Scintillator",thXinBin,-thYin+0.5,thYin+0.5,20,-0.5,19.5);
+
+TH2F *h2RotScinP = new TH2F("h2RotScinP", "Scintillator Vs Rotational + X in-going angle (#theta_{x,in}); N",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *h2RotScin_inP = new TH2F("h2RotScin_inP","Scintillator Vs Rotational - X in-going angle (#theta_{x,in}); N",(nbin+4)*20,rotSX,rotDX,20,0,20);
+
+
+
 
