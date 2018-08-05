@@ -699,8 +699,8 @@ TH2F *hthYinP_eslow = new TH2F("hthYinP_eslow","Gamma VS Y in-going angle (#thet
 TH2F *hthXinScinP= new TH2F("hthXinScinP","Scintillator VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Scintillator",thXinBin,-thXin+0.5,thXin+0.5,20,-0.5,19.5);
 TH2F *hthYinScinP= new TH2F("hthYinScinP","Scintillator VS Y in-going angle (#theta_{y,in}); Horizontal Incoming Angle [#murad]; Scintillator",thXinBin,-thYin+0.5,thYin+0.5,20,-0.5,19.5);
 
-TH2F *h2RotScinP = new TH2F("h2RotScinP", "Scintillator Vs Rotational + X in-going angle (#theta_{x,in}); N",(nbin+4)*20,rotSX,rotDX,20,0,20);
-TH2F *h2RotScin_inP = new TH2F("h2RotScin_inP","Scintillator Vs Rotational - X in-going angle (#theta_{x,in}); N",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *h2RotScinP = new TH2F("h2RotScinP", "Scintillator Vs Rotational + X in-going angle (#theta_{x,in}); Cradle Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
+TH2F *h2RotScin_inP = new TH2F("h2RotScin_inP","Scintillator Vs Rotational - X in-going angle (#theta_{x,in}); Cradle Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 
 
 

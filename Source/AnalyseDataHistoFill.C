@@ -545,8 +545,8 @@ if(flagpos) hthYinP_efast->Fill(thYin,calo_crys_tot_energy_efast);
 if(flagpos) hthXinScinP->Fill(thXin,scin);
 if(flagpos) hthYinScinP->Fill(thYin,scin);
 
-if(flagpos) h2RotScinP->Fill((float)h2st,scin);          
-if(flagpos) h2RotScin_inP->Fill((float)h2st+divcorr,scin);  
+if(flagpos) h2RotScinP->Fill((float)h2st+divcorr,scin);          
+if(flagpos) h2RotScin_inP->Fill((float)h2st-divcorr,scin);  
 
 
 
