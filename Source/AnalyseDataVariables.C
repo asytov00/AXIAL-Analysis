@@ -15,6 +15,8 @@ struct part_save
 bool SD4 = 0;
 bool SD5 = 0;
 
+int iii;
+
 int filein_first;      // start point of analysis
 int runnumb;     // run number to be analyzed
 int dummynfiles;

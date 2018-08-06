@@ -874,7 +874,7 @@ sprintf(filesdir,"%s",argv[1]);
 				
                             }
                             else if(scanflag==2) divcorr = thYin;
-                            else if(scanflag==0) divcorr = -xCRY*1.E-3;
+                            else if(scanflag==0) divcorr = -xCRY*1.E-3+12.4; // to center for the lateral scan
 			    else if(scanflag==4) divcorr = -xCRY*1.E-3;
 			    else if(scanflag==5) divcorr = +yCRY*1.E-3;
 

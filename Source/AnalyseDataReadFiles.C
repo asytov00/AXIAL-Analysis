@@ -59,6 +59,12 @@
     }
     fscanf(filein," %f %f %f %f %f %4d %4d %9d",&(gonio_rot),&(gonio_crad),&(up_lin),&(up_lin_2),&(up_ver),&(spillnumb),&(goniostep),&(eventnumb));
     
+    //if( (runnumb >= 300258)) { 
+    //  for(unsigned int i0=0;i0<519;i0++){    
+    //      fscanf(filein,"%5d",&iii);
+    //  }
+    //}
+    
     //std::cout << gonio_rot << " " << eventnumb << std::endl;
 
  }
