@@ -549,7 +549,12 @@ if(flagpos) h2RotScinP->Fill((float)h2st+divcorr,scin);
 if(flagpos) h2RotScin_inP->Fill((float)h2st-divcorr,scin);  
 
 
+//Photomultiplier histograms 2018
+if(flagpos) hthXinPhotomP->Fill(thXin,photom);
+if(flagpos) hthYinPhotomP->Fill(thYin,photom);
 
+if(flagpos) h2RotPhotomP->Fill((float)h2st+divcorr,photom);          
+if(flagpos) h2RotPhotom_inP->Fill((float)h2st-divcorr,photom); 
 
 
 

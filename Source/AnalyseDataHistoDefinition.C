@@ -696,12 +696,17 @@ TH2F *hthYinP_eslow = new TH2F("hthYinP_eslow","Gamma VS Y in-going angle (#thet
 //
 
 //Scintillator histograms 2018
-TH2F *hthXinScinP= new TH2F("hthXinScinP","Scintillator VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Scintillator",thXinBin,-thXin+0.5,thXin+0.5,400,-200,19800);
-TH2F *hthYinScinP= new TH2F("hthYinScinP","Scintillator VS Y in-going angle (#theta_{y,in}); Vertical Incoming Angle [#murad]; Scintillator",thXinBin,-thYin+0.5,thYin+0.5,400,-200,19800);
+TH2F *hthXinScinP= new TH2F("hthXinScinP","Scintillator VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Scintillator signal",thXinBin,-thXin+0.5,thXin+0.5,400,-200,19800);
+TH2F *hthYinScinP= new TH2F("hthYinScinP","Scintillator VS Y in-going angle (#theta_{y,in}); Vertical Incoming Angle [#murad]; Scintillator signal",thXinBin,-thYin+0.5,thYin+0.5,400,-200,19800);
 
 TH2F *h2RotScinP = new TH2F("h2RotScinP", "Scintillator Vs Scan of Rotational + X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 TH2F *h2RotScin_inP = new TH2F("h2RotScin_inP","Scintillator Vs Scan of Rotational - X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 
 
+//Photomultiplier histograms 2018
+TH2F *hthXinPhotomP= new TH2F("hthXinPhotomP","Photomultiplier VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Photomultiplier signal",thXinBin,-thXin+0.5,thXin+0.5,400,-200,19800);
+TH2F *hthYinPhotomP= new TH2F("hthYinPhotomP","Photomultiplier VS Y in-going angle (#theta_{y,in}); Vertical Incoming Angle [#murad]; Photomultiplier signal",thXinBin,-thYin+0.5,thYin+0.5,400,-200,19800);
 
+TH2F *h2RotPhotomP = new TH2F("h2RotPhotomP", "Photomultiplier Vs Scan of Rotational + X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Photomultiplier signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
+TH2F *h2RotPhotom_inP = new TH2F("h2RotPhotom_inP","Photomultiplier Vs Scan of Rotational - X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Photomultiplier signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 
