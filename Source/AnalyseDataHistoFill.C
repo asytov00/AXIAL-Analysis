@@ -473,6 +473,10 @@ for (int ii111 = 0 ; ii111 <8 ; ii111++){
     hCalo2018ADC[ii111]->Fill(deva[ii111]);
 }
 //scan plots for gamma 2018
+
+if(flagpos) Crad2018Ph_gamma->Fill((float)h2st,calo_crys_tot_energy_gamma); 
+if(flagpos) Rot2018Ph_gamma->Fill((float)h2st,calo_crys_tot_energy_gamma);
+
 if(flagpos) h2dX1in2018Ph_gamma->Fill((float)h2st+divcorr,calo_crys_tot_energy_gamma);
 if(flagpos) h2dX1in2018PhInv_gamma->Fill((float)h2st-divcorr,calo_crys_tot_energy_gamma);
 if(flagpos) h2018PhthXinP_gamma->Fill(thXin,calo_crys_tot_energy_gamma);
