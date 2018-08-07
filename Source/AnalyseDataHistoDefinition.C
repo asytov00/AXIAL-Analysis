@@ -702,6 +702,8 @@ TH2F *hthYinScinP= new TH2F("hthYinScinP","Scintillator VS Y in-going angle (#th
 TH2F *h2RotScinP = new TH2F("h2RotScinP", "Scintillator Vs Scan of Rotational + X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 TH2F *h2RotScin_inP = new TH2F("h2RotScin_inP","Scintillator Vs Scan of Rotational - X in-going angle (#theta_{x,in}); Scan Angle [#murad]; Scintillator signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 
+TH2F *CradScinP = new TH2F("CradScinP","Scintillator Vs Cradle Scan; Cradle Angle [#murad]; Scintillator signal",Nsteps_crad,gonio_crad_first-0.5*binSizeCrad,gonio_crad_last-0.5*binSizeCrad,400,-200,19800);
+TH2F *RotScinP = new TH2F("RotScinP","Scintillator Vs Rotational; Rotational Angle [#murad]; Scintillator signal",Nsteps_rot,gonio_rot_first-0.5*binSizeRot,gonio_rot_last-0.5*binSizeRot,400,-200,19800);
 
 //Photomultiplier histograms 2018
 TH2F *hthXinPhotomP= new TH2F("hthXinPhotomP","Photomultiplier VS X in-going angle (#theta_{x,in}); Horizontal Incoming Angle [#murad]; Photomultiplier signal",thXinBin,-thXin+0.5,thXin+0.5,400,-200,19800);
