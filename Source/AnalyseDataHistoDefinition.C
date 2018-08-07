@@ -531,8 +531,6 @@ double binSizeRot=(gonio_rot_last-gonio_rot_first)/Nsteps_rot;
 TH2F *Crad2018Ph_gamma = new TH2F("Crad2018Ph_gamma","Gamma Vs Cradle Scan; Cradle Angle [#murad]; Energy [GeV]",Nsteps_crad,gonio_crad_first-0.5*binSizeCrad,gonio_crad_last-0.5*binSizeCrad,binCalo,EminCalo,EmaxCalo);
 TH2F *Rot2018Ph_gamma = new TH2F("Rot2018Ph_gamma","Gamma Vs Rotational Scan; Rotational Angle [#murad]; Energy [GeV]",Nsteps_rot,gonio_rot_first-0.5*binSizeRot,gonio_rot_last-0.5*binSizeRot,binCalo,EminCalo,EmaxCalo);
 
-double binSizeCrad=(gonio_crad_last-gonio_crad_first)/Nsteps_crad;
-double binSizeRot=(gonio_crad_last-gonio_crad_first)/Nsteps_rot;
 TH2F *h2dX1in2018Ph_gamma = new TH2F("h2dX1in2018Ph_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 TH2F *h2dX1in2018PhInv_gamma = new TH2F("h2dX1in2018PhInv_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle - X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 
