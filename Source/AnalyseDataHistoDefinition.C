@@ -526,6 +526,8 @@ double EmaxCalo = 140.5;
 int binCalo = (EmaxCalo - EminCalo) * 2.;
 
 //scan plots for gamma 2018
+double binSizeCrad=(gonio_crad_last-gonio_crad_first)/Nsteps_crad;
+double binSizeRot=(gonio_crad_last-gonio_crad_first)/Nsteps_rot;
 TH2F *h2dX1in2018Ph_gamma = new TH2F("h2dX1in2018Ph_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle + X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 TH2F *h2dX1in2018PhInv_gamma = new TH2F("h2dX1in2018PhInv_gamma","Gamma: Calorimeter 4 Vs Goniometer rotation angle - X in-going angle (#theta_{x,in}) ; Horizontal Incoming Angle [#murad]; Energy [GeV]; Counts [a.u.]",(nbin+4)*2*10,rotSX,rotDX,binCalo,EminCalo,EmaxCalo);
 
