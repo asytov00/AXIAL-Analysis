@@ -141,3 +141,24 @@ if( (runnumb >= 300258))
  } 
 
 
+ //PWO
+if( (runnumb >= 300258))
+{
+    deflXmar1=-128.;    deflXmar2=128.;
+    deflYmar1=-128.;    deflYmar2=128.;
+    
+    thXin=128.;
+    thXout=128.;
+    
+    torsion_posYthX=0.;//murad on mm
+    //torsion_posXthX=0.;//20.;//murad on mm
+    meanchang = 0.;
+   
+    X_CUT_left  = 11730.;  
+    X_CUT_right = 13400.;
+    Y_CUT_left  = 8000;//10000.;    
+    Y_CUT_right = 13500;//13800.;
+    //Y_CUT_left = 10500;    Y_CUT_right = 11500;
+    
+    DEVA_CUT = 600.;
+ } 
